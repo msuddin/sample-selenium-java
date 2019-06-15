@@ -11,3 +11,11 @@ Answer:
 * The Web Driver configuration may be used to change the driver implementation without much code change anywhere else.
 * There is also a single JUnit test that can be executed with 'gradle test'.
 * The test itself opens a web page and asserts on the page title.
+
+## Instructions on running from the command line
+
+Navigate into the root directory of the project and run
+
+```
+./gradlew clean test
+```
