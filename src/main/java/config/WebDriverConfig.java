@@ -17,7 +17,15 @@ public class WebDriverConfig {
     }
 
     private void setProperties() {
-        System.setProperty("webdriver.chrome.driver","chromedriver");
+        String osName = System.getProperty("os.name");
+        String chromeDriverType;
+
+        if (osName.toLowerCase().contains("windows")) {
+            chromeDriverType = "chromedriver.exe";
+        } else {
+            chromeDriverType = "chromedriver";
+        }
+        System.setProperty("webdriver.chrome.driver", chromeDriverType);
     }
 
     private void initialiseDriver() {
