@@ -11,7 +11,8 @@ Answer:
 * The Web Driver configuration may be used to change the driver implementation without much code change anywhere else.
 * There is also a single JUnit test that can be executed with 'gradle test'.
 * The test itself opens a web page and asserts on the page title.
-* WebDriverConfig will try to detect the OS and use the relevant chromedriver file to run the test
+* WebDriverConfig will try to detect the OS and use the relevant chromedriver file to run the test.
+* WebDriverConfig is using the Singletone Pattern to ensure only one instance of it exists.
 
 ## Instructions on running from the command line
 

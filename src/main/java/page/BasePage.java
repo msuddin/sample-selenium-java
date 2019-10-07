@@ -35,19 +35,19 @@ public class BasePage {
         return this;
     }
 
-    private void waitIdleOnPageForSecond(int seconds) {
-        try {
-            Thread.sleep(seconds * 1000);
-        } catch (Exception e) {
-            System.out.println("Unable to wait on the page.");
-        }
-    }
-
     public String pageTitle() {
         return webDriver.findElement(By.id("firstHeading")).getText();
     }
 
     public void quiteDriver() {
         webDriver.quit();
+    }
+
+    private void waitIdleOnPageForSecond(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (Exception e) {
+            System.out.println("Unable to wait on the page.");
+        }
     }
 }

@@ -1,10 +1,12 @@
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import page.BasePage;
+
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 
 public class GradleTest {
 
@@ -32,6 +34,6 @@ public class GradleTest {
                 .sendKeyToElement(Keys.ENTER);
 
         // Then
-        Assert.assertTrue(basePage.pageTitle().equals("Gradle"));
+        assertThat(basePage.pageTitle(), is("Gradle"));
     }
 }
