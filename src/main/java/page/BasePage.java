@@ -30,8 +30,17 @@ public class BasePage {
     }
 
     public BasePage sendKeyToElement(Keys keys) {
+        this.waitIdleOnPageForSecond(1);
         element.sendKeys(keys);
         return this;
+    }
+
+    private void waitIdleOnPageForSecond(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (Exception e) {
+            System.out.println("Unable to wait on the page.");
+        }
     }
 
     public String pageTitle() {
